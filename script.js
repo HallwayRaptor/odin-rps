@@ -1,10 +1,21 @@
-//script.js
+
 
 //main game function
+
+
+const buttons = document.querySelectorAll('.selection button');
+buttons.forEach(btn =>{
+    btn.addEventListener('click', (e)=>{
+        
+    })
+})
+
+
 
 //define scores and set to 0
 let computerScore = 0;
 let playerScore = 0;
+let winner = 0;
 
 //create an array with computer's options
 const options = ['rock', 'paper', 'scissors'];
@@ -17,7 +28,23 @@ let computerOption = options[computerNumber];
 //return the option chosen from the array
 return computerOption;
 }
+//get player choice
+function playerChoice(){
+    return 'paper';
+}
+//chose the winner
+function chooseWinner (player, computer) {
+    if ((player === 'rock' && computer === 'scissors') || (player === 'paper' && computer === 'rock') || (player === 'scissors' && computer === 'paper')) {
+        return winner = 'player';
+    } else if ((player === 'rock' && computer === 'paper') || (player === 'paper' && computer === 'scissors') || (player === 'scissors' && computer === 'rock')) {
+        return winner = 'computer';
+    } else {
+        return winner = 'draw';
+    }
+}
+
 //check if computerChoice is working 
 console.log(computerChoice());
-
+winner = chooseWinner(playerChoice(), computerChoice());
+console.log(`You chose ${playerChoice()}, the computer chose ${computerChoice()}.`);
 

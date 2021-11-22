@@ -60,7 +60,6 @@ function displayWinner() {
     }
 }
 
-
 const btnScissors = document.querySelector('#scissors');
 const btnPaper = document.querySelector('#paper');
 const btnRock = document.querySelector('#rock');

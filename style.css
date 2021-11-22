@@ -39,7 +39,7 @@ h1 {
   background-color: #373737;
 }
 
-.selection {
+.buttons {
   display: flex;
   justify-content: center;
   gap: 2em;
@@ -47,14 +47,15 @@ h1 {
   max-height: 100vh;
 }
 
-.scoreBox {
+#scoreBox {
   width: 80%;
   margin: 2em auto;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   background-color: #1e5c57;
   box-shadow: 0.6rem 0.6rem rgba(0, 0, 0, 0.3);
   border-radius: 1em;
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -70,6 +71,7 @@ button {
   border: 0;
   border-radius: 0.3em;
   box-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .footer {
@@ -77,4 +79,7 @@ button {
   justify-content: center;
   margin: 0;
   padding: 0.5em;
+}
+
+.results {
 }

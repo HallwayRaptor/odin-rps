@@ -48,6 +48,18 @@ function addPoints() {
     }
 };
 
+function displayWinner() {
+    if (playerPoints >= 5) {
+        scoreBoxText.textContent = `You win!`;
+        playerPoints = 0;
+        computerPoints = 0;
+    } else if (computerPoints >= 5) {
+        scoreBoxText.textContent = `The computer wins!`;
+        computerPoints = 0;
+        playerPoints = 0;
+    }
+}
+
 
 const btnScissors = document.querySelector('#scissors');
 const btnPaper = document.querySelector('#paper');
@@ -66,29 +78,32 @@ scoreBox.appendChild(scoreBoxText2);
 
 btnRock.addEventListener('click', function (e) {
     chooseWinner('rock', computerChoice());
+    addPoints()
     console.log(`You chose rock the computer chose ${computerChoice()} The winner is ${winner}`);
     scoreBoxText.textContent = `You chose rock! The computer chose ${computerChoice()}! `;
     scoreBoxText2.textContent = `You : ${playerPoints} | computer : ${computerPoints}`;
-    addPoints()
+    displayWinner()
 
 })
 
 
 btnPaper.addEventListener('click', function (e) {
     chooseWinner('paper', computerChoice());
+    addPoints()
     console.log(`You chose paper the computer chose ${computerChoice()} The winner is ${winner}`);
     scoreBoxText.textContent = `You chose paper! The computer chose ${computerChoice()}! `;
     scoreBoxText2.textContent = `You : ${playerPoints} | computer : ${computerPoints}`;
-    addPoints()
+    displayWinner()
 })
 
 
 btnScissors.addEventListener('click', function (e) {
     chooseWinner('scissors', computerChoice());
+    addPoints()
     console.log(`You chose scissors the computer chose ${computerChoice()} The winner is ${winner}`);
     scoreBoxText.textContent = `You chose scissors! The computer chose ${computerChoice()}! `;
     scoreBoxText2.textContent = `You : ${playerPoints} | computer : ${computerPoints}`;
-    addPoints()
+    displayWinner()
 })
 
 
